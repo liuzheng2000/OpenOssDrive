@@ -1,0 +1,43 @@
+#定义启动端口
+server:
+ port: 8080
+#自定义文件上传位置
+upload:
+ path: G:\OpenOss\data\
+
+download:
+  path: G:\OpenOss\download\
+
+
+
+
+
+#mysql连接配置
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/ossopen?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+
+
+#SQL日志打印
+#logging:
+#  level:
+#    root: info
+#    org:
+#      hibernate:
+#        SQL: debug
+#        type:
+#          descriptor:
+#            sql:
+#              BasicBinder: trace
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: taskExecutor-thread-pool
+
+
+
